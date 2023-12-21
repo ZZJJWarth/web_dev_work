@@ -29,7 +29,7 @@
 
 <h2>Add Form</h2>
 
-<form name="modifyDeleteForm" method="post" action="ModifyDeleteServlet" onsubmit="return validateForm()">
+<form name="modifyDeleteForm" method="post" action="addCommodityServlet" onsubmit="return validateForm()">
     Name: <input type="text" name="itemName" required><br>
     Price: <input type="text" name="itemPrice" required pattern="\d*"><br>
     <br>

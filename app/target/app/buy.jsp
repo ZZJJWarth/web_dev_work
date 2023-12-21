@@ -33,14 +33,15 @@
         // 执行查询
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
-
+        String username=request.getParameter("username");
+        out.println("<h1>Welcome!"+username+"</h1><br>");
         // 遍历查询结果生成按钮
         while (resultSet.next()) {
             String name = resultSet.getString("name");
             String price = resultSet.getString("price");
 %>          
             price:<h3><%= price %></h3><br>
-            buy:<button type="button" onclick="handleButtonClick('<%= name %>')"><%= name %></button><br>
+            buy:<button type="button" onclick="handleButtonClick('<%= name %>','<%= username%>')"><%= name %></button><br>
             <h1>---------------------------------------------------</h1><br>
 <%
         }
@@ -54,12 +55,29 @@
         out.println("An error occurred while processing the database.");
     }
 %>
-
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
-    function handleButtonClick(itemName) {
-        // 在这里处理按钮点击事件
-        alert("Button clicked for item: " + itemName);
-        // 可以添加其他逻辑或跳转到相应的页面
+    function handleButtonClick(itemName,username) {
+        $.ajax({
+                type: "Post",
+                url: "/app/addPayServlet",  
+                data: {
+                    username: username,
+                    commodity: itemName
+                },
+                success: function (response) {
+                    console.log(response[0])
+                    if (response[0] == "s") {
+                        alert(username+",you buy a " + itemName);
+                        
+                    } else {
+                        alert(username+",your buying is not successful,place try again");
+                    }
+                },
+                error: function () {
+                    alert(username+",we cannot post a request!");
+                }
+            });
     }
 </script>
 

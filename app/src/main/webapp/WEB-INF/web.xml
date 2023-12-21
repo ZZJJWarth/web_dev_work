@@ -33,4 +33,44 @@
   <servlet-name>LoginServlet</servlet-name>
   <url-pattern>/LoginServlet</url-pattern>
 </servlet-mapping>
+
+<servlet>
+  <servlet-name>addPayServlet</servlet-name>
+  <servlet-class>com.servlet.addPayServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>addPayServlet</servlet-name>
+  <url-pattern>/addPayServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>addCommodityServlet</servlet-name>
+  <servlet-class>com.servlet.addCommodityServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>addCommodityServlet</servlet-name>
+  <url-pattern>/addCommodityServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>ModifyDeleteServlet</servlet-name>
+  <servlet-class>com.servlet.ModifyDeleteServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>ModifyDeleteServlet</servlet-name>
+  <url-pattern>/ModifyDeleteServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>deleteCommodityServlet</servlet-name>
+  <servlet-class>com.servlet.deleteCommodityServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>deleteCommodityServlet</servlet-name>
+  <url-pattern>/deleteCommodityServlet</url-pattern>
+</servlet-mapping>
 </web-app>

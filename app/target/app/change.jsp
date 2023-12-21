@@ -36,8 +36,5 @@
     <button type="submit" name="action" value="modify">Modify</button>
 
 </form>
-<form method="post" action="ModifyDeleteServlet">
-    <button type="submit" name="action" value="delete" onclick="handleDeleteButtonClick()">Delete</button>
-</form>
 </body>
 </html>

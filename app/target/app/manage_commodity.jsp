@@ -42,6 +42,9 @@
 %>          
             price:<h3><%= price %></h3><br>
             manage:<button type="button" onclick="handleButtonClick('<%= name %>')"><%= name %></button><br>
+            <form method="post" action="deleteCommodityServlet?name=<%= name %>">
+                <button>delete</button>
+            </form>
             <h1>---------------------------------------------------</h1><br>
 <%
         }
